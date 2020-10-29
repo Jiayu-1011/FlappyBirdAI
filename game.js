@@ -282,6 +282,18 @@ Game.prototype.display = function(){
 	});
 }
 
+function define_population(){
+	let POPULATION = parseInt(document.querySelector('#population').value);
+	Neuvol = new Neuroevolution({
+		population:POPULATION,
+		network:[2, [2], 1],
+	});
+	game = new Game();
+	game.start();
+	game.update();
+	game.display();
+}
+
 window.onload = function(){
 	var sprites = {
 		bird:"./img/bird.png",
